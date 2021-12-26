@@ -1,8 +1,26 @@
+
+html,body,#root,.App{
+  height: 100%;
+}
+
+
+.App{
+  padding-right: 16px;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.div-button{
+  margin-top: auto;
+  padding-bottom: 16px;
+}
+
 .ripple-button {
-  border-radius: 4px;
+  border-radius: 10px;
   border: none;
-  margin: 8px;
-  padding: 14px 24px;
+  height: 52px;
+  width: 100%;
   background: #1976d2;
   color: #fff;
   overflow: hidden;
@@ -11,19 +29,17 @@
 }
 
 .ripple-button .ripple {
-  width: 20px;
-  height: 20px;
+  width: 100px;
+  height: 100px;
   position: absolute;
   background: rgba(255, 255, 255, 0.4);
-  background: -webkit-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
-  background: -o-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
-  background: -moz-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
-  background: radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
   display: block;
   content: "";
+  border-radius: 10px;
   border-radius: 100%;
+  animation: 2.5s ease ripple-effect;
   opacity: 1;
-  animation: 0.95s ease 1 forwards ripple-effect;
+
 }
 
 @keyframes ripple-effect {
@@ -31,17 +47,24 @@
     transform: scale(1);
     opacity: 1;
   }
-  50% {
-    transform: scale(10);
-    opacity: 0.375;
+
+  35% {
+    transform: scale(15);
+    opacity: 0.7;
   }
-  100% {
+
+  50% {
     transform: scale(35);
+    opacity: 0.4;
+  }
+  
+  75% {
+    transform: scale(20);
+    opacity: 0.2;
+  }
+  
+  100% {
+    transform: scale(15);
     opacity: 0;
   }
-}
-
-.ripple-button .content {
-  position: relative;
-  z-index: 2;
 }

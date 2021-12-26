@@ -6,7 +6,9 @@ import Button from './Button';
 function App() {
   return (
     <div className="App">
-     <Button>2342342342</Button>
+      <div className='div-button'>
+      <Button>2342342342</Button>
+    </div>
     </div>
   );
 }
